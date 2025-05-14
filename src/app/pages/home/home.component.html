@@ -1,0 +1,68 @@
+<div class="dashboard">
+  <!-- Header Section -->
+  <header class="header">
+    <div class="header-content">
+      <h1>🤍 Paris</h1>
+      <button class="logout-btn" (click)="logout()">Çıkış Yap</button>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <main class="content">
+    <!-- Left Column -->
+    <div class="left-column">
+      <!-- Aşı Takibi -->
+      <section class="card vaccine-tracker">
+        <div class="card-header">
+          <h2>Aşı Takvimi</h2>
+          <button class="add-btn">+ Yeni Ekle</button>
+        </div>
+        <ul class="vaccine-list">
+          <li *ngFor="let vaccine of vaccines">
+            <span class="vaccine-name">{{vaccine.name}}</span>
+            <span class="vaccine-date">{{vaccine.date}}</span>
+            <span class="status-indicator" [class.due]="vaccine.status === 'due'"></span>
+          </li>
+        </ul>
+      </section>
+
+      <!-- Veteriner Ziyaretleri -->
+      <section class="card vet-visits">
+        <div class="card-header">
+          <h2>Veteriner Geçmişi</h2>
+          <button class="add-btn">+ Randevu Al</button>
+        </div>
+        <div class="visit-list">
+          <div *ngFor="let visit of vetVisits" class="visit-item">
+            <div class="visit-date">{{visit.date}}</div>
+            <div class="visit-details">{{visit.description}}</div>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <!-- Right Column -->
+    <div class="right-column">
+      <!-- Sağlık Notları -->
+      <section class="card health-notes">
+        <div class="card-header">
+          <h2>Sağlık Notlarım</h2>
+          <button class="add-btn">+ Not Ekle</button>
+        </div>
+        <div class="notes-container">
+          <div *ngFor="let note of healthNotes" class="note-item">
+            <div class="note-date">{{note.date}}</div>
+            <p class="note-content">{{note.content}}</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Veteriner İletişim -->
+      <section class="card vet-message">
+        <h2>Veterinerime Mesaj</h2>
+        <textarea placeholder="Veterinerinize mesajınızı yazın..."></textarea>
+        <button class="send-btn">Gönder</button>
+      </section>
+    </div>
+  </main>
+</div>

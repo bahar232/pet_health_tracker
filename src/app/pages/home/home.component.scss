@@ -1,0 +1,156 @@
+.dashboard {
+  min-height: 100vh;
+  background: linear-gradient(to right, #e0f7fa, #ffffff);
+  padding: 20px;
+
+  .header {
+    background: #23aea0;
+    color: #fff;
+    padding: 20px;
+    border-radius: 12px;
+    margin-bottom: 20px;
+
+    .header-content {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      h1 {
+        margin: 0;
+        font-size: 28px;
+      }
+
+      .logout-btn {
+        background: #ffffff;
+        color: #00897b;
+        border: none;
+        padding: 10px 16px;
+        border-radius: 8px;
+        font-weight: bold;
+        cursor: pointer;
+        transition: 0.3s ease;
+
+        &:hover {
+          background: #004d40;
+          color: #fff;
+        }
+      }
+    }
+  }
+
+  .content {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+
+    .left-column, .right-column {
+      flex: 1;
+      min-width: 300px;
+    }
+
+    .card {
+      background: #ffffff;
+      border-radius: 12px;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.06);
+      padding: 16px;
+      margin-bottom: 20px;
+
+      .card-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 10px;
+
+        h2 {
+          margin: 0;
+          font-size: 20px;
+          color: #4ee0d1;
+        }
+
+        .add-btn {
+          background: #23aea0;
+          color: #fff;
+          border: none;
+          padding: 6px 12px;
+          border-radius: 6px;
+          cursor: pointer;
+
+          &:hover {
+            background: #004d40;
+          }
+        }
+      }
+
+      .vaccine-list, .visit-list, .notes-container {
+        list-style: none;
+        padding: 0;
+
+        li, .visit-item, .note-item {
+          background: #f1f8f9;
+          border-radius: 8px;
+          padding: 10px;
+          margin-bottom: 8px;
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+
+          .vaccine-name {
+            font-weight: bold;
+          }
+
+          .vaccine-date, .visit-date, .note-date {
+            font-size: 14px;
+            color: #555;
+          }
+
+          .status-indicator {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: #8bc34a;
+
+            &.due {
+              background: #ff5722;
+            }
+          }
+
+          .note-content, .visit-details {
+            font-size: 15px;
+            color: #333;
+            margin-top: 4px;
+          }
+        }
+      }
+    }
+
+    .vet-message {
+      textarea {
+        width: 100%;
+        padding: 10px;
+        border-radius: 8px;
+        border: 1px solid #ccc;
+        resize: vertical;
+        margin-bottom: 10px;
+      }
+
+      .send-btn {
+        background: #00897b;
+        color: #fff;
+        padding: 8px 16px;
+        border: none;
+        border-radius: 8px;
+        cursor: pointer;
+
+        &:hover {
+          background: #004d40;
+        }
+      }
+    }
+  }
+
+  @media (max-width: 768px) {
+    .content {
+      flex-direction: column;
+    }
+  }
+}
